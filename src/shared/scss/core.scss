@@ -1,0 +1,250 @@
+@import "color-variables";
+
+html, body {
+  height: 100%;
+  margin: 0;
+
+  .form-select {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 8px -1px $gray-8-100;
+    position: relative;
+    overflow: hidden;
+
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: 1px 1px 8px -1px $gray-8-100;
+    }
+  }
+}
+
+img {
+  object-fit: cover;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+
+  &.button-primary {
+    background-color: $pink-2-100;
+
+    &:hover {
+      background-color: $pink-1-100;
+    }
+  }
+
+  &.button-primary-outline {
+    background-color: $white-1-100;
+    border: 1px solid $pink-2-100;
+    color: $pink-1-100;
+
+    &:hover {
+      box-shadow: 1px 1px 4px -1px $gray-8-100;
+    }
+  }
+
+
+  &.big-button-primary {
+    background-color: $pink-2-100;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+
+    &:hover {
+      background-color: $pink-1-100;
+    }
+  }
+
+  &.big-button-primary-outline {
+    background-color: $white-1-100;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid $pink-1-100;
+    color: $pink-1-100;
+
+    &:hover {
+      box-shadow: 4px 4px 8px -2px $gray-8-100;
+    }
+  }
+
+  &.button-action {
+    background-color: $blue-2-100;
+
+    &:hover {
+      background-color: $blue-1-100;
+    }
+  }
+
+  &.button-action-outline {
+    background-color: $white-1-100;
+    border: 1px solid $blue-2-100;
+    color: $blue-1-100;
+
+    &:hover {
+      box-shadow: 2px 2px 4px -1px $gray-8-100;
+    }
+  }
+
+  &.big-button-action {
+    background-color: $blue-2-100;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+
+    &:hover {
+      background-color: $blue-1-100;
+    }
+  }
+
+  &.big-button-action-outline {
+    background-color: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid $blue-1-100;
+    color: $blue-1-100;
+
+    &:hover {
+      box-shadow: 4px 4px 8px -2px $gray-8-100;
+    }
+  }
+
+  &.button-success {
+    background-color: $green-2-100;
+
+    &:hover {
+      background-color: $green-1-100;
+    }
+  }
+
+  &.button-success-outline {
+    background-color: $white-1-100;
+    border: 1px solid $green-2-100;
+    color: $green-1-100;
+
+    &:hover {
+      box-shadow: 2px 2px 4px -1px $gray-8-100;
+    }
+  }
+
+  &.big-button-success {
+    background-color: $green-2-100;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+
+    &:hover {
+      background-color: $green-1-100;
+    }
+  }
+
+  &.big-button-success-outline {
+    background-color: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid $green-1-100;
+    color: $green-1-100;
+
+    &:hover {
+      box-shadow: 4px 4px 8px -2px $gray-8-100;
+    }
+  }
+
+  &.button-close {
+    background-color: $gray-3-100;
+
+    &:hover {
+      background-color: $gray-1-100;
+    }
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    box-shadow: none;
+    cursor: not-allowed;
+    background: transparent;
+    color: $gray-5-100;
+    fill: $gray-5-100;
+    border: 1px solid $gray-5-100;
+  }
+}
+
+.color-pink {
+  color: $pink-1-100;
+}
+
+.color-pink-3 {
+  color: $pink-3-100;
+}
+
+.bg-pink-2 {
+  background-color: $pink-2-80;
+}
+
+.bg-pink-5-50 {
+  background-color: $pink-5-50;
+}
+
+.color-blue {
+  color: $blue-1-100;
+}
+
+.bg-blue {
+  background-color: $blue-1-100;
+}
+
+.color-green {
+  color: $green-1-100;
+}
+
+
+.bg-green {
+  background-color: $green-1-100;
+}
+
+.color-purple {
+  color: $purple-1-100;
+}
+
+.bg-purple {
+  background-color: $purple-1-100;
+}
+
+.color-red {
+  color: $red-1-100;
+}
+
+.bg-red {
+  background-color: $red-1-100;
+}
+
+.color-gray {
+  color: $gray-1-100;
+}
+
+.bg-gray {
+  background-color: $gray-1-100;
+}
+
+
+.color-gray-3 {
+  color: $gray-3-100;
+}
+
+.bg-gray-3 {
+  background-color: $gray-3-100;
+}

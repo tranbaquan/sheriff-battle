@@ -1,0 +1,82 @@
+<div class="sheriff-main">
+  <div class="d-none d-lg-block sidebar p-4 position-sticky top-0 shadow"
+       [@sidebarToggle]="menuCollapsed ? 'collapsed' : 'expanded'">
+    <div class="d-flex align-items-center mb-5">
+      <div *ngIf="!menuCollapsed" class="d-flex align-items-center gap-1  text-nowrap overflow-hidden">
+        <div class="d-flex align-items-center img-icon">
+          <span class="avatar fs-4 fw-bolder">Q</span>
+        </div>
+        <span class="fw-bolder fs-4">Quan Tran</span>
+      </div>
+      <div class="ms-auto d-flex toggle" (click)="toggleMenu()">
+        <fa-icon [icon]="faBars" class="m-auto"></fa-icon>
+      </div>
+    </div>
+    <div class="d-flex flex-column">
+      <div *ngIf="!menuCollapsed" class="text-muted mb-3 fw-bold fs-5 text-nowrap overflow-hidden">Menu</div>
+      <div class="d-flex flex-column gap-1">
+        <div class="item d-flex align-items-center" [class.active]="isActive('board')" routerLink="board">
+          <div class="icon d-flex">
+            <fa-icon class="m-auto" [icon]="faGavel"></fa-icon>
+          </div>
+          <span *ngIf="!menuCollapsed" class="text-nowrap overflow-hidden">Board</span>
+        </div>
+        <div class="item d-flex align-items-center" [class.active]="isActive('ranking')" routerLink="ranking">
+          <div class="icon d-flex">
+            <fa-icon class="m-auto" [icon]="faTrophy"></fa-icon>
+          </div>
+          <span *ngIf="!menuCollapsed" class="text-nowrap overflow-hidden">Ranking</span>
+        </div>
+        <div class="item d-flex align-items-center" [class.active]="isActive('member')" routerLink="member">
+          <div class="icon d-flex">
+            <fa-icon class="m-auto" [icon]="faUserFriends"></fa-icon>
+          </div>
+          <span *ngIf="!menuCollapsed" class="text-nowrap overflow-hidden">Member</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="body-wrapper">
+
+    <div class="d-flex align-items-center p-4 bg-pink-2 shadow nav-bar">
+      <div class="text-white fw-bolder fs-2">Bang</div>
+      <div class="d-flex align-items-center img-icon icon-sm d-lg-none ms-auto me-3">
+        <span class="avatar fs-6 fw-bolder">Q</span>
+      </div>
+      <div class="ms-lg-3 d-flex d-lg-none toggle" data-bs-toggle="collapse" data-bs-target="#menu">
+        <fa-icon [icon]="faBars" class="m-auto"></fa-icon>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <div class="navbar-nav bg-pink-5-50">
+        <div class="d-flex flex-column">
+          <div class="item d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#menu"
+               routerLink="board">
+            <div class="icon d-flex">
+              <fa-icon class="m-auto" [icon]="faGavel"></fa-icon>
+            </div>
+            <span class="text-nowrap overflow-hidden">Board</span>
+          </div>
+          <div class="item d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#menu"
+               routerLink="ranking">
+            <div class="icon d-flex">
+              <fa-icon class="m-auto" [icon]="faTrophy"></fa-icon>
+            </div>
+            <span class="text-nowrap overflow-hidden">Ranking</span>
+          </div>
+          <div class="item d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#menu"
+               routerLink="member">
+            <div class="icon d-flex">
+              <fa-icon class="m-auto" [icon]="faUserFriends"></fa-icon>
+            </div>
+            <span class="text-nowrap overflow-hidden">Member</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

@@ -1,0 +1,60 @@
+<div class="p-4">
+  <div class="row">
+    <div *ngFor="let board of boards" class="col-12 col-md-6 col-xl-4 mb-3">
+      <div class="card border-0 shadow h-100">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{board.name}}</h5>
+          <div class="d-flex mb-3 gap-3 flex-wrap">
+            <div class="d-flex align-items-center img-icon bg-blue">
+              <span class="avatar fs-4 fw-bolder">Q</span>
+            </div>
+            <div class="d-flex align-items-center img-icon bg-green">
+              <span class="avatar fs-4 fw-bolder">L</span>
+            </div>
+            <div class="d-flex align-items-center img-icon bg-purple">
+              <span class="avatar fs-4 fw-bolder">M</span>
+            </div>
+            <div class="d-flex align-items-center img-icon bg-red">
+              <span class="avatar fs-4 fw-bolder">T</span>
+            </div>
+            <div class="d-flex align-items-center img-icon bg-gray-3 icon-btn shadow">
+              <fa-icon class="m-auto text-white" [icon]="faUserPlus"></fa-icon>
+            </div>
+          </div>
+          <div class="d-flex mt-auto">
+            <button class="button button-primary" (click)="goToBoard(board)">Go to board</button>
+            <button class="button button-close ms-auto">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="newBoard" class="col-12 col-md-6 col-xl-4 mb-3">
+      <div class="card border-0 shadow">
+        <div class="card-body">
+          <h5 class="card-title">
+            <input class="form-control" type="text" [(ngModel)]="newBoard.name" placeholder="Enter board name">
+          </h5>
+          <div class="d-flex mb-3 gap-3 flex-wrap">
+            <div class="d-flex align-items-center img-icon bg-gray-3 icon-btn shadow">
+              <fa-icon class="m-auto text-white" [icon]="faUserPlus"></fa-icon>
+            </div>
+          </div>
+          <div class="d-flex">
+            <button class="button button-primary" (click)="saveBoard()">Save</button>
+            <button class="button button-close ms-auto" (click)="newBoard = null">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!newBoard" class="col-12 col-md-6 col-xl-4 mb-3">
+      <div class="card border-0 shadow h-100 card-clickable" (click)="createBoard()">
+        <div class="card-body d-flex align-items-center justify-content-center">
+          <div class="m-auto color-pink d-flex gap-1 align-items-center justify-content-center">
+            <fa-icon [icon]="faPlus" size="2x"></fa-icon>
+            <span class="fs-5">Click to create new board</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

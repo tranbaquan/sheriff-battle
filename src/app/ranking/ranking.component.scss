@@ -1,0 +1,61 @@
+@import "src/shared/scss/color-variables";
+
+.top {
+
+  .ranking {
+    max-width: 280px;
+    min-width: 250px;
+  }
+
+  .card {
+    border-radius: 50px;
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+
+    .medal {
+      border-radius: 50%;
+    }
+
+    .silver-medal {
+      color: $silver;
+    }
+
+    .bronze-medal {
+      color: $bronze;
+    }
+
+    .gold-medal {
+      color: $gold;
+    }
+  }
+
+  .bg-top-3 {
+    background-image: linear-gradient(to bottom, $pink-2-80, $pink-1-80);
+  }
+
+  .text-top-3 {
+    color: $pink-1-100;
+  }
+
+  .bg-top-2 {
+    background-image: linear-gradient(to bottom, $blue-2-80, $blue-1-80);
+  }
+
+  .text-top-2 {
+    color: $blue-1-100;
+  }
+
+  .bg-top-1 {
+    background-image: linear-gradient(to bottom, $purple-1-80, $purple-2-80);
+  }
+
+  .text-top-1 {
+    color: $purple-1-100;
+  }
+}
+

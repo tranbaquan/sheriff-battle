@@ -1,0 +1,65 @@
+<div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+  <div *ngFor="let character of characters" class="card p-3 solider" [class.disabled]="character.isDied">
+    <div class="card-body">
+      <div class="card-title">
+        <img class="role-icon me-2" src="../../assets/imgs/ninja.png">
+        <span>{{character.member.name}}</span>
+      </div>
+      <h6 *ngIf="character.role" class="card-subtitle text-muted">{{character.role.name}}</h6>
+      <div class="d-flex gap-3 mt-3">
+        <button class="button button-action w-100" data-bs-toggle="modal" data-bs-target="#reveal-roles">Reveal</button>
+        <div class="modal fade" id="reveal-roles" tabindex="-1" aria-labelledby="reveal-roles" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">I'm sheriff...</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex align-items-center justify-content-center flex-wrap gap-3 my-5">
+                  <div class="role" *ngFor="let role of roles">
+                    <img class="role-avatar" src="../../assets/imgs/ninja.png">
+                    <div>{{role.name}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="button button-primary w-100" [disabled]="character.isDied" data-bs-toggle="modal"
+                data-bs-target="#kill">Kill
+        </button>
+        <div *ngIf="!character.isDied" class="modal fade" id="kill" tabindex="-1" aria-labelledby="kill"
+             aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Forgive me, my god...</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex align-items-center justify-content-center flex-wrap gap-3 my-5">
+                  <ng-container *ngFor="let aliveCharacter of characters">
+                    <div class="role" *ngIf="!aliveCharacter.isDied">
+                      <div class="avatar">
+                        <span class="symbol">{{aliveCharacter.member.name?.charAt(0)}}</span>
+                      </div>
+                      <div>{{aliveCharacter.member.name}}</div>
+                    </div>
+                  </ng-container>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions mt-3">
+        <div *ngFor="let died of character.killedMembers">
+          <span class="text-muted">Killed </span><span>{{died.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

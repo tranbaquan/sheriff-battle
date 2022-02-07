@@ -1,0 +1,63 @@
+@import "../../shared/scss/color-variables";
+
+.card {
+  border-radius: 25px;
+  min-width: 250px;
+
+  .card-title {
+    font-weight: 700;
+    font-size: 18px;
+
+    .role-icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .card-body {
+
+    .role {
+      padding: 10px;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 1px 1px 8px -1px $gray-8-100;
+      cursor: pointer;
+
+
+      &:hover {
+        box-shadow: 2px 2px 8px -1px $gray-8-100;
+      }
+
+
+      .role-avatar {
+        width: 60px;
+        height: 60px;
+      }
+
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        background-color: $pink-4-100;
+        border-radius: 50%;
+        display: flex;
+
+        .symbol {
+          margin: auto;
+          font-weight: 900;
+          font-size: 24px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    background-color: $gray-8-80;
+  }
+}
